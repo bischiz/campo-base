@@ -1,0 +1,45 @@
+name: campo_base
+description: Campo Base, il posto dove partono le tue avventure.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  pocketbase: ^0.23.0
+  bloc: ^9.0.1
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.5
+  cached_network_image: ^3.4.1
+  flutter_secure_storage: ^10.0.0
+  intl: ^0.17.0
+  url_launcher: ^6.2.2
+  share_plus: ^12.0.1
+  app_links: ^7.0.0
+  loading_animation_widget: ^1.2.0+4
+  firebase_core: ^4.3.0
+  firebase_messaging: ^16.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/
+
+  fonts:
+    - family: CampoBaseFont
+      fonts:
+        - asset: assets/SFPRODISPLAYREGULAR.otf
+        - asset: assets/SFPRODISPLAYBOLD.otf
+          weight: 700
+        - asset: assets/SFPRODISPLAYMEDIUM.otf
+          weight: 400
