@@ -25,7 +25,7 @@ Comuni:
 - Schermata profilo: oggi toccare un partecipante o l'autore di un commento non apre nulla
 - Inbox notifiche in-app (quella di Odyssey è legata a like/commenti/tag delle avventure)
 - Cartelle `android/`, `ios/`, `web/`: vanno generate (vedi sotto) con i nuovi identificativi
-- Da decidere: stesso login di Odyssey oppure account separati
+- Backend: nuovo PocketBase dedicato (vedi sotto), con le collezioni `users`, `events`, `iscrizioni` e i commenti degli eventi da ricreare
 
 ## Avvio
 
@@ -36,7 +36,11 @@ flutter pub get
 flutter run --dart-define=API_URL=https://<server-campo-base>
 ```
 
-`API_URL` e `WEB_URL` (link condivisi) hanno come default `https://projectodyssey.it`, il PocketBase esistente con le collezioni `events` e `iscrizioni`, finché non c'è il server di Campo Base.
+## Account e backend
+
+Campo Base ha account e PocketBase separati da Odyssey (decisione del 23/10/2026). Nessun login condiviso: chi usa entrambe le app ha due account. `API_URL` e `WEB_URL` (link condivisi) hanno come default `http://localhost:8090`, il PocketBase locale di sviluppo.
+
+Nota: il codice importato conosce i nomi delle collezioni del PocketBase di Odyssey (`events`, `iscrizioni`, i commenti, il campo `fcmToken` su `users`). Lo schema del nuovo server va allineato a quelli, oppure il codice va adattato.
 
 Per i deep link configura lo schema `campobase://` e gli URL `<WEB_URL>/evento/<id>` in Android e iOS.
 
